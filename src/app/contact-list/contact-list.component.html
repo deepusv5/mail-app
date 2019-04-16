@@ -1,0 +1,63 @@
+<div class="contact-list">
+   <div class="user">
+     <figure>
+        <img src="../../assets/images/logo_img.png" height="100" width="128" alt="Logo image" class="org-logo">
+        <img src="../../assets/images/placeholder_avatar.jpg" height="50" width="50" alt="Placeholder image" class="user-img">     
+     </figure>     
+   </div>
+   <div class="search-box">
+     <!-- Search input -->
+     <input type="text" name="search" class="form-control" placeholder="search messages">
+     <!-- Search input --> 
+     <span class="search-icon input-group-addon">
+      <mat-icon>search</mat-icon>
+     </span>     
+   </div>
+   <!-- messages list-->
+   <section class="messages-list">
+      <mat-card class="message-card" (click)="select(item)" *ngFor="let item of contactList">
+        <mat-card-header class="message-header">
+          <img mat-card-avatar src="{{item.profileImg}}" height="" width="" alt="" class="message-header-image">
+          <div class="profile-title-block">
+              <mat-card-title class="card-title">{{item.profileName}}</mat-card-title>
+          </div>          
+          <span class="time-stamp">{{item.timeStamp}}</span>
+        </mat-card-header>                
+        <mat-card-content [ngClass]="isActive(item) ? 'message-content-card-active' : 'message-content-card'">
+          <span>
+            <strong>{{item.msgHeader}}</strong>
+          </span>
+          <p class="msg-content">
+              <mat-icon>reply</mat-icon>
+              {{item.msgContent}}
+          </p>
+        </mat-card-content>  
+        <span class="list-sgr"></span>      
+      </mat-card>
+
+      <!-- <mat-card class="message-card" (click)="changeClass()">
+          <mat-card-header class="message-header">
+            <img mat-card-avatar src="https://material.angular.io/assets/img/examples/shiba1.jpg" height="" width="" alt="" class="message-header-image">
+            <div class="profile-title-block">
+                <mat-card-title class="card-title">Shiba Inu</mat-card-title>
+            </div>          
+            <span class="time-stamp">20m</span>
+          </mat-card-header>        
+          <mat-card-content [ngClass]="activeClass ? 'message-content-card-active' : 'message-content-card'">
+            <span>
+              <strong>Vote for neitrality</strong>
+            </span>
+            <p class="msg-content">
+                <mat-icon>reply</mat-icon>
+              The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+            </p>
+          </mat-card-content>    
+        </mat-card>         -->
+   </section>
+   <div class="new-message">
+    <button mat-raised-button color="primary" class="new-msg-btn">
+      <mat-icon>add</mat-icon>  New Message
+    </button>
+    </div>
+   <!-- messages list-->
+</div>

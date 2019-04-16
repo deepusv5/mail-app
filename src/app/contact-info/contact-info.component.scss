@@ -1,0 +1,80 @@
+
+//extendable css
+%text-color {
+    color: #6D6E6E;
+}
+
+.contact-info {
+    .profile-image {
+        figure {
+            img {
+              box-shadow: 1px 2px 3px -1px #b6b6b6;
+              width: 100%;
+            }
+        }        
+    }
+    .profile-details {
+        padding: 5px 42px 0 40px;
+        
+       .profile-name {
+           display: inline-flex;
+    
+           h3 {
+               font-size: 1.45rem;
+               font-weight: bold;
+               padding-right: 11px;
+           }
+           img {
+               margin-top:-7px;
+           }
+       }
+       .sub-text {
+           color: #BDC3C4;
+           line-height: 1.4;
+           font-size: 13px;
+           padding-top: 2px;
+           font-weight: bold;
+       }
+       .profile-summary {
+           border-top: 2px solid #D5D5D6;
+           border-bottom: 2px solid #D5D5D6;
+           color: #6D6E6E;
+           font-size: 12px;
+           padding: 20px 0;
+           text-align: justify;
+           font-weight: bold;
+       }
+       .contact-list-info {
+           ul {
+               list-style-type: none;
+               font-size: 12px;
+               padding: 0;
+               margin: 12px 0;
+
+               li {
+                   display: flex;
+                   line-height: 2.4;
+                   color: #BDC3C4;
+                   font-weight: bold;
+                   
+                   span:last-child {
+                       margin: auto;
+                       margin-right: 0;
+                   } 
+                   .contact-email {
+                       color:#03ADF5;
+                   }
+                   .phone-no {
+                       @extend %text-color;
+                   }
+                   .unanswered-msgs {
+                       @extend %text-color;
+                   }
+                   .reply-status {
+                       color:#25CF75;
+                   }
+               }
+           }
+       }
+    }
+}
